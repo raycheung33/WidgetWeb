@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Widget — Add to Home Screen</title>
+<meta name="description" content="Widget — design your own iPhone and iPad widgets for the Home Screen, Lock Screen and Control Center: dates, calendars, clocks, countdowns and more.">
+<style>
+  /* Same palette and font stack as privacy.html and terms.html, so the pages read as one
+     site rather than several. */
+  :root {
+    --bg: #f7f6ff;
+    --fg: #1e1b3a;
+    --muted: #5b5878;
+    --rule: #dcd8f5;
+    --accent: #5b3fd6;
+    --on-accent: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #13121c;
+      --fg: #ecebf7;
+      --muted: #a4a1bd;
+      --rule: #2b2940;
+      --accent: #a99cff;
+      --on-accent: #13121c;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    padding: 4rem 1.25rem 3rem;
+    background: var(--bg);
+    color: var(--fg);
+    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+  }
+  /* Prose is left-aligned so each line is easy to track back to its start;
+     only the title and the button are centred. */
+  main { max-width: 34rem; margin: 0 auto; }
+  h1 { font-size: 2.25rem; line-height: 1.2; margin: 0 0 1.5rem; letter-spacing: -.02em; text-align: center; }
+  /* The section headings are set in capitals, so the size does the separating:
+     caps at body size read as shouting, caps at this size read as a heading. */
+  h2 {
+    font-size: 1.3rem;
+    line-height: 1.3;
+    letter-spacing: .02em;
+    margin: 2.75rem 0 .75rem;
+  }
+  p { margin: 0 0 1rem; }
+  .lead { font-size: 1.15rem; color: var(--muted); margin-bottom: 2.5rem; }
+  ul { margin: 0 0 1rem; padding-left: 1.2rem; }
+  li { margin-bottom: .6rem; }
+  li b { font-weight: 600; }
+  a { color: var(--accent); }
+  .cta { margin-top: 3.5rem; text-align: center; }
+  .btn {
+    display: block;
+    background: var(--accent);
+    color: var(--on-accent);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 10px;
+    /* Padding rather than a fixed height, so the target grows with the text at
+       larger accessibility sizes instead of clipping it. */
+    padding: .85rem 1.5rem;
+    min-height: 44px;
+  }
+  .btn:hover { opacity: .9; }
+  .btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+  /* The button does nothing for a visitor with no mail client, and it fails
+     silently. This is the copyable way out of that. */
+  .fallback { color: var(--muted); font-size: .9rem; margin: 1rem 0 0; }
+  .note { color: var(--muted); font-size: .9rem; }
+  /* Three of the app's widgets, side by side, where a mascot would go. */
+  .widgets { display: flex; justify-content: center; gap: .6rem; margin: 0 0 1.5rem; }
+  .widgets img { display: block; width: 31%; max-width: 9rem; height: auto; border-radius: 22%; }
+  footer {
+    margin-top: 4rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    color: var(--muted); font-size: .9rem;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <div class="widgets">
+    <img src="widget-month.png" alt="A month calendar widget with today circled" width="420" height="420">
+    <img src="widget-year-progress.png" alt="A year progress widget with a star for each week" width="420" height="420">
+    <img src="widget-work-countdown.png" alt="A work countdown widget reading three hours to go" width="420" height="420">
+  </div>
+  <h1>Widget</h1>
+
+  <p class="lead">Design your own widgets for iPhone and iPad. Start from a
+  template, then change the colors, fonts, sizes and layout until it looks the
+  way you want.</p>
+
+  <h2>WIDGETS FOR EVERY PLACE</h2>
+  <ul>
+    <li><b>Home Screen:</b> small, medium and large.</li>
+    <li><b>Lock Screen:</b> the line above the clock, and the round and
+    rectangular slots below it.</li>
+    <li><b>Control Center:</b> an icon you choose, or a calendar that shows
+    today’s date.</li>
+  </ul>
+
+  <h2>TEMPLATES FOR EVERYDAY LIFE</h2>
+  <ul>
+    <li><b>Dates and calendars,</b> from a single date to a month you can page
+    through on the Home Screen.</li>
+    <li><b>Events and holidays</b> from the calendars you choose, with a dot
+    under each day that has something on.</li>
+    <li><b>Clocks:</b> analog, digital, and the time in another city.</li>
+    <li><b>Countdowns:</b> days until a date, time left at work, and time
+    until lunch.</li>
+    <li><b>Progress:</b> how much of the year or the week has passed, as stars
+    or a percent.</li>
+    <li><b>Text and emoji,</b> including phrases that change through the
+    day.</li>
+  </ul>
+
+  <h2>MAKE IT YOURS</h2>
+  <ul>
+    <li>Tap any part of a widget to change its color, font, size, alignment
+    and opacity, or to hide it.</li>
+    <li>Drag the parts into the order you want.</li>
+    <li>Pick a color theme and a style, or build your own.</li>
+    <li>Use a photo as the background, then drag, pinch and rotate it into
+    place.</li>
+    <li>Pick a color straight from a photo.</li>
+  </ul>
+
+  <h2>IN YOUR LANGUAGE</h2>
+  <p>The app is available in 15 languages, and each widget can show its dates
+  and words in a language of its own.</p>
+
+  <h2>PRIVATE BY DESIGN</h2>
+  <p>No account, no ads and no tracking. Your widgets, your photos and your
+  calendar events stay on your device and are never sent to us. The app only
+  goes online for the App Store, when you choose to buy Pro.</p>
+
+  <h2>FREE AND PRO</h2>
+  <p>The free version lets you keep one widget, with every template and every
+  setting. Pro is an optional one-time purchase that lets you keep as many
+  widgets as you like.</p>
+
+  <div class="cta">
+    <a class="btn" href="mailto:hello@widget-add-to-home-screen.com?subject=Widget%20feedback">Send feedback</a>
+
+    <p class="fallback">Or write to
+    <a href="mailto:hello@widget-add-to-home-screen.com">hello@widget-add-to-home-screen.com</a></p>
+  </div>
+
+  <footer><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a></footer>
+
+</main>
+</body>
+</html>
